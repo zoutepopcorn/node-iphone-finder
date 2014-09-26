@@ -13,11 +13,11 @@ var iCloudPass = '#############';
 // Find all devices the user owns
 iPhoneFinder.findAllDevices(iCloudUser, iCloudPass, function(err, devices) {
     // Got here? Great! Lets see some device information
-    if (!err) {
-        devices.forEach(outputDevice);
-    } else {
+    if (err) {
         // handle error
         console.log("Error, look at user / passwd");
+    } else {
+        devices.forEach(outputDevice);
     }
 });
 
